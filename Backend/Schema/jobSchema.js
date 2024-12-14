@@ -41,6 +41,10 @@ const jobSchema = new mongoose.Schema({
     addInfo: {
         type: String,
         required: false
+    },
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User' // Reference to the User model
     }
 })
 

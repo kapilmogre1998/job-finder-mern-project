@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-side{
+    padding: 0px 64px;
+    width: 50%;
+}
+
+.right-side {
+    width: 50%;
+}
+
+.right-side {
+    background-image: url(../../assets/personal-job-banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.right-side h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 36px;
+}
+
+.left-side {
+    text-align: start;
+}
+
+.left-side p {
+    color: #525252;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.left-side form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left-side input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    outline: none;
+}
+
+.submit-btn{
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.left-side button {
+    background-color: #ED5353;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    width: 180px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sign-up{
+    font-size: 14px;
+    color: #525252;
+    padding-top: 10px;
+}
+
+.sign-up span{
+    text-decoration: underline;
+    color: #e40046;
+    font-weight: 500;
+    cursor: pointer;
+}
