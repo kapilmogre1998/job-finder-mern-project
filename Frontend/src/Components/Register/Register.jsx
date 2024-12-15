@@ -1,12 +1,22 @@
 import React from "react";
-import './Register.css'
 import { useNavigate } from "react-router-dom";
+import { registerAPI } from "./api";
+import './Register.css'
 
 function App() {
   const navigate = useNavigate();
 
+  const handleCreate = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await registerAPI()
+    } catch (error) {
+      
+    }
+  }
+
   return (
-    <div className="container">
+    <div className="register-container">
       <div className="form-section">
         <h1>Create an account</h1>
         <p>Your personal job finder is here</p>
@@ -22,7 +32,7 @@ function App() {
               policy.
             </label>
           </div>
-          <button className="create-account-btn">Create Account</button>
+          <button className="create-account-btn" onClick={handleCreate} >Create Account</button>
         </form>
         <p className="signin-text">
           Already have an account? <span onClick={() => navigate('/login')} >Sign In</span>

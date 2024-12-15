@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
 
     return (
-      <div className="container">
+      <div className="login-container">
         <div className="left-side">
           <h2>Already have an account?</h2>
           <p>Your personal job finder is here</p>

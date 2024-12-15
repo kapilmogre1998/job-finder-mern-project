@@ -4,22 +4,31 @@ const Job = require('../Schema/jobSchema');
 const authenticateToken = require('../middleware/authenticateToken');
 
 router.get('/', async (req, res) => {
-    const jobs = await Job.find();
-    if (!jobs) {
-        return res.status(401).json({ message: 'No Jobs Found' });
+    let query = {};
+    
+    if(req.query.title){
+        query.position = {$regex:req.query.title,$options:"i"}
     }
-    else {
-        return res.json({ sts: 1, data: jobs });
+    if(req.query.skills){
+        query.skills = {$in:[req.query.skills]}
+    }
+    
+    const jobs = await Job.find(query);
+    
+    if (!jobs) {
+        return res.status(404).json({ message: 'No Jobs Found', sts: 1 });
+    } else {
+        return res.status(201).json({ sts: 1, data: jobs });
     }
 })
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id;
     const job = await Job.findById(id);
+
     if (!job) {
-        return res.status(401).json({ message: 'No Job Found By This Id' });
-    }
-    else {
+        return res.status(404).json({ message: 'No Job Found By This Id', sts: 1 });
+    } else {
         return res.json({ sts: 1, data: job });
     }
 })
@@ -85,12 +94,12 @@ router.put('/update/:id', authenticateToken, async (req, res) => {
 
 router.delete('/delete/:id', authenticateToken, async (req, res) => {
     const id = req.params.id;
+
     try {
         const job = await Job.findById(id);
         if(!job){
             return res.json({ message: "No Job Found" })
         }
-        
         if(req.user.userId !== job.createdBy.toString()){
             return res.json({ message: "You are not authorized to delete this job" })
         }

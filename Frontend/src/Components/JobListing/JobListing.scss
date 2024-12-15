@@ -1,0 +1,51 @@
+
+.job-listing-container{
+    
+    .job-top-banner{
+        width: 100%;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 0px 0px 44px 44px;
+
+        & img:nth-child(1){
+            width: 100%;
+            height: 100%;
+        }
+
+        .title{
+            font-size: 20px;
+            left: 5%;
+            top: 30%;
+        }
+    }
+
+    .shade-1{
+        top: -10px;
+        left: 35%;
+        height: 100%;
+    }
+
+    .shade-2{
+        top: 0px;
+        right: 40px;
+        width: 20%;
+        height: 100%;
+    }
+
+    .shade-3{
+        bottom: 0px;
+        width: 18%;
+        left: -4px;
+    }
+
+    .action-btns{
+        top: 30%;
+        right: 3%;
+        display: flex;
+        gap: 1rem;
+
+        & > p:nth-child(1){
+            border: 1px solid white;
+        }
+    }
+}
