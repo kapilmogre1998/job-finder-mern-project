@@ -31,7 +31,7 @@
 }
 
 form {
-  width: 75%;
+  width: 80%;
 }
 
 form>input {
@@ -39,7 +39,7 @@ form>input {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 2px solid #ccc;
   border-radius: 5px;
   outline: none;
 }

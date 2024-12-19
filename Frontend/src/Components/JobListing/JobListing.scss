@@ -48,4 +48,34 @@
             border: 1px solid white;
         }
     }
+
+    .jobs-container{
+        margin-top: 10%;
+
+        .job-card{
+            box-shadow: 0px 0px 22px 4px #FF202040;
+
+            .company-logo{
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        .skills-container > span{
+            background-color: #FFEEEE;
+        }
+
+        .btn-container > button{
+            width: 120px;
+        }
+
+        .edit-btn{
+            color: #ED5353;
+            border: 1px solid #ED5353;
+        }
+
+        .view-btn{
+            background-color: #ED5353;
+        }
+    }
 }

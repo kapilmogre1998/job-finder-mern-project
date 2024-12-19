@@ -7,7 +7,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleCreate = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     try {
       const res = await registerAPI()
     } catch (error) {
@@ -21,10 +21,10 @@ function App() {
         <h1>Create an account</h1>
         <p>Your personal job finder is here</p>
         <form>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="tel" placeholder="Mobile" />
-          <input type="password" placeholder="Password" />
+          <input required className="w-full" type="text" placeholder="Name" />
+          <input required className="w-full" type="email" placeholder="Email" />
+          <input required className="w-full" type="tel" placeholder="Mobile" />
+          <input required className="w-full" type="password" placeholder="Password" />
           <div className="checkbox-section">
             <input type="checkbox" id="terms" checked={true} />
             <label htmlFor="terms">
@@ -39,7 +39,7 @@ function App() {
         </p>
       </div>
       <div className="image-section">
-        <h2> Your Personal Job Finder</h2>
+        <h2 className='text-2xl' > Your Personal Job Finder</h2>
       </div>
     </div>
   );
